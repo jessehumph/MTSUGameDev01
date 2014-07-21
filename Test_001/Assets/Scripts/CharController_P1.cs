@@ -14,6 +14,7 @@ public class CharController_P1 : MonoBehaviour {
 	void Start(){
 		anim = GetComponent<Animator> ();
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,15 +22,30 @@ public class CharController_P1 : MonoBehaviour {
 		// Left movement
 		if (Input.GetKey ("a")) {
 			transform.position -= Vector3.right * playerSpeed * Time.deltaTime;
+			anim.SetFloat("Speed", 1f);
+		}
+		/*if (Input.GetKeyDown("a")){
+			anim.SetFloat("Speed", 1f);
+		}*/
+		if (Input.GetKeyUp("a")){
+			anim.SetFloat("Speed", 0f);
 		}
 	
 		// Right movement
 		if (Input.GetKey ("d")) {
 			transform.position += Vector3.right * playerSpeed * Time.deltaTime;
-			//anim.SetFloat("Speed", 1f);
+			anim.SetFloat("Speed", 1f);
+		}
+		/*if (Input.GetKeyDown("d")){
+			anim.SetFloat("Speed", 1f);
+		}*/
+		if (Input.GetKeyUp("d")){
+			anim.SetFloat("Speed", 0f);
 		}
 
-		anim.SetFloat("Speed", 1f);
+		if (Input.GetKey ("d") && Input.GetKey ("a")) {
+			anim.SetFloat ("Speed", 0f);
+		}
 
 	}
 }
