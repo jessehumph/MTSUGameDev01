@@ -9,6 +9,9 @@ public class CharController_P1 : MonoBehaviour {
 	// Integer to control maximum jump height
 	public int maxJumpHeight = 500;
 
+	// Boolean to determine if object can jump
+	public bool canJump = false;
+
 	Animator anim;
 
 	void Start(){
@@ -47,5 +50,22 @@ public class CharController_P1 : MonoBehaviour {
 			anim.SetFloat ("Speed", 0f);
 		}
 
+		// Jumps when 'w' is pressed
+		if (Input.GetKey ("w")) {
+			Jump ();
+		}
+
+	}
+
+	void Jump(){
+		if (canJump) {
+			rigidbody2D.AddForce (new Vector3 (0, maxJumpHeight, 0), ForceMode.Force );
+			canJump = false;
+		}
+	}
+
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.name == "Floor")
+			canJump = true;
 	}
 }
