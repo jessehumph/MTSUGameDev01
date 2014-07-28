@@ -7,7 +7,7 @@
 	var mesh : GameObject;
 	var anim : Animator;
 	
-	private var grounded = false;
+	public var grounded = false;
 
 	function Start(){
 		Debug.Log(mesh.transform.forward.ToString());
@@ -22,9 +22,6 @@
 			transform.position -= Vector3.right * playerSpeed * Time.deltaTime;
 			anim.SetFloat("Speed", 1f);
 		}
-		/*if (Input.GetKeyDown("left")){
-			anim.SetFloat("Speed", 1f);
-		}*/
 		if (Input.GetKeyUp("left")){
 			anim.SetFloat("Speed", 0f);
 		}
@@ -35,9 +32,7 @@
 			transform.position += Vector3.right * playerSpeed * Time.deltaTime;
 			anim.SetFloat("Speed", 1f);
 		}
-		/*if (Input.GetKeyDown("right")){
-			anim.SetFloat("Speed", 1f);
-		}*/
+
 		if (Input.GetKeyUp("right")){
 			anim.SetFloat("Speed", 0f);
 		}

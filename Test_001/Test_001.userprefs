@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharController_P2.js">
     <Files>
-      <File FileName="Assets\Scripts\Camera Movement.js" Line="14" Column="20" />
-      <File FileName="Assets\Scripts\CharController_P1.js" Line="13" Column="12" />
-      <File FileName="Assets\Scripts\CharController_P2.js" Line="34" Column="134" />
+      <File FileName="Assets\Scripts\CharController_P1.cs" Line="33" Column="24" />
+      <File FileName="Assets\Scripts\Camera Movement.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharController_P1.js" Line="10" Column="24" />
+      <File FileName="Assets\Scripts\CharController_P2.js" Line="8" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

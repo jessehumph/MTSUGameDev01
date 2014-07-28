@@ -59,7 +59,7 @@ public class CharController_P1 : MonoBehaviour {
 
 	void Jump(){
 		if (canJump) {
-			rigidbody2D.AddForce (new Vector3 (0, maxJumpHeight, 0), ForceMode.Force );
+			rigidbody2D.AddForce (new Vector3 (0, maxJumpHeight, 0), ForceMode2D.Force );
 			canJump = false;
 		}
 	}

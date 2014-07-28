@@ -7,7 +7,7 @@
 	var mesh : GameObject;
 	var anim : Animator;
 	
-	private var grounded = false;
+	public var grounded = false;
 
 	function Start(){
 	Debug.Log(mesh.transform.forward.ToString());
@@ -18,7 +18,8 @@
 	function Update () {
 		// Left movement
 		if (Input.GetKey ("a")) {
-			transform.position -= mesh.transform.forward * playerSpeed * Time.deltaTime;
+			if(mesh.transform.forward.x>-1){mesh.transform.forward=Vector3.RotateTowards(mesh.transform.forward,Vector3.left,30*Time.deltaTime,0);}
+			transform.position -= Vector3.right * playerSpeed * Time.deltaTime;
 			anim.SetFloat("Speed", -1f);
 		}
 		/*if (Input.GetKeyDown("a")){
@@ -30,7 +31,8 @@
 	
 		// Right movement
 		if (Input.GetKey ("d")) {
-			transform.position += mesh.transform.forward * playerSpeed * Time.deltaTime;
+			if(mesh.transform.forward.x<1){mesh.transform.forward=Vector3.RotateTowards(mesh.transform.forward,Vector3.right,30*Time.deltaTime,0);}
+			transform.position += Vector3.right * playerSpeed * Time.deltaTime;
 			anim.SetFloat("Speed", 1f);
 		}
 		/*if (Input.GetKeyDown("d")){
@@ -44,7 +46,7 @@
 			anim.SetFloat ("Speed", 0f);
 		}
 		
-		if(Input.GetButtonDown("Jump")&&grounded){
+		if(Input.GetKeyDown("w")&&grounded){
 			rigidbody2D.AddForce(Vector3.up*maxJumpHeight);
 			grounded=false;
 		}
